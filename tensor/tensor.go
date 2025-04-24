@@ -54,6 +54,10 @@ func (t *Tensor) At(indices ...int) float64 {
 	return t.Data[t.Index(indices...)]
 }
 
+func (t *Tensor) Set(value float64, indices ...int) {
+	t.Data[t.Index(indices...)] = value
+}
+
 // Fill fills the tensor with a constant value.
 func (t *Tensor) Fill(val float64) {
 	for i := range t.Data {
